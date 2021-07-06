@@ -25,7 +25,8 @@ from sklearn import svm
 # clf = svm.LinearSVC()
 
 # use a RBF kernel
-clf = svm.SVC(kernel="rbf")
+# Optimize C Parameter
+clf = svm.SVC(kernel="rbf", C=10000.)
 
 # slice the training dataset down to 1% of its original size
 features_train = features_train[:len(features_train)/100]
