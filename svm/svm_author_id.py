@@ -36,6 +36,12 @@ clf.fit(features_train,labels_train)
 
 pred = clf.predict(features_test)
 
+# Extracting Predictions from an SVM
+
+print pred[10]
+print pred[26]
+print pred[50]
+
 from sklearn.metrics import accuracy_score
 
 print accuracy_score(pred,labels_test)
