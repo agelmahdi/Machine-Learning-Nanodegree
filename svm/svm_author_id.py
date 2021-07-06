@@ -29,8 +29,8 @@ from sklearn import svm
 clf = svm.SVC(kernel="rbf", C=10000.)
 
 # slice the training dataset down to 1% of its original size
-features_train = features_train[:len(features_train)/100]
-labels_train = labels_train[:len(labels_train)/100]
+# features_train = features_train[:len(features_train)/100]
+# labels_train = labels_train[:len(labels_train)/100]
 
 clf.fit(features_train,labels_train)
 
@@ -42,8 +42,18 @@ print pred[10]
 print pred[26]
 print pred[50]
 
-from sklearn.metrics import accuracy_score
+count =0
+for p in pred :
+    if p == 1 :
+        count += 1
 
-print accuracy_score(pred,labels_test)
+print count
+
+
+
+
+# from sklearn.metrics import accuracy_score
+#
+# print accuracy_score(pred,labels_test)
 
 
