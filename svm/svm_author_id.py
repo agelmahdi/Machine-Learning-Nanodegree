@@ -22,7 +22,10 @@ features_train, features_test, labels_train, labels_test = preprocess()
 from sklearn import svm
 
 # use a linear kernel
-clf = svm.LinearSVC()
+# clf = svm.LinearSVC()
+
+# use a RBF kernel
+clf = svm.SVC(kernel="rbf")
 
 # slice the training dataset down to 1% of its original size
 features_train = features_train[:len(features_train)/100]
